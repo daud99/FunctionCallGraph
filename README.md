@@ -1,4 +1,4 @@
-# Generate Function Graph using IDAPYTHON Malware Analysis
+# Generate Function Graph using IDAPYTHON
 
 ## Working
 
@@ -9,11 +9,11 @@ if __name__ == '__main__':
 #     ea = 4199680
 ```
 
-In case if you want to specify your own EA then simply comment the last line as shown in above snippet in main.py file.
+In case if you want to specify your own EA then simply uncomment the last line as shown in above snippet in main.py file.
 
 ## How to execute Script
 
-1. You have to open your PE in the Portable Executable in IDAPro.
+1. You have to open your PE file in the Portable Executable in IDAPro.
 2. Select the File > Script file option from menu bar.
 3. Browse to main.py file.
 4. This will simply execute the IDAPython script.
@@ -40,6 +40,12 @@ file = "./graph.json"
 python CreateGraph.py
 ```
 > This will open the graph in the browser.
+
+## Keyword:
+
+- IDAPython
+- Malware Analysis
+- Call Graph
 
 ## Contributer:
 Daud Ahmed (daudahmed@zoho.com)
