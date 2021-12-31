@@ -1,0 +1,67 @@
+{
+    "edges": [
+        [
+            "Entry Point",
+            "___main"
+        ],
+        [
+            "Entry Point",
+            "_puts"
+        ],
+        [
+            "Entry Point",
+            "_sum"
+        ],
+        [
+            "Entry Point",
+            "_sum"
+        ],
+        [
+            "Entry Point",
+            "_consoleSum"
+        ],
+        [
+            "Entry Point",
+            "_consoleSum"
+        ],
+        [
+            "_sum",
+            "_consoleSum"
+        ],
+        [
+            "_sum",
+            "_consoleSum"
+        ],
+        [
+            "_consoleSum",
+            "_printf"
+        ],
+        [
+            "_consoleSum",
+            "_printf"
+        ],
+        [
+            "_consoleSum",
+            "_printf"
+        ],
+        [
+            "_consoleSum",
+            "_printf"
+        ]
+    ],
+    "nodes": [
+        "Entry Point",
+        "___main",
+        "_puts",
+        "_sum",
+        "_sum",
+        "_consoleSum",
+        "_consoleSum",
+        "_consoleSum",
+        "_consoleSum",
+        "_printf",
+        "_printf",
+        "_printf",
+        "_printf"
+    ]
+}

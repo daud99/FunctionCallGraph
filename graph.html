@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 800px;
+            background-color: #222222;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"font": {"color": "white"}, "id": "Entry Point", "label": "Entry Point", "shape": "dot"}, {"font": {"color": "white"}, "id": "___main", "label": "___main", "shape": "dot"}, {"font": {"color": "white"}, "id": "_puts", "label": "_puts", "shape": "dot"}, {"font": {"color": "white"}, "id": "_sum", "label": "_sum", "shape": "dot"}, {"font": {"color": "white"}, "id": "_consoleSum", "label": "_consoleSum", "shape": "dot"}, {"font": {"color": "white"}, "id": "_printf", "label": "_printf", "shape": "dot"}]);
+        edges = new vis.DataSet([{"arrows": "to", "from": "Entry Point", "to": "___main"}, {"arrows": "to", "from": "Entry Point", "to": "_puts"}, {"arrows": "to", "from": "Entry Point", "to": "_sum"}, {"arrows": "to", "from": "Entry Point", "to": "_sum"}, {"arrows": "to", "from": "Entry Point", "to": "_consoleSum"}, {"arrows": "to", "from": "Entry Point", "to": "_consoleSum"}, {"arrows": "to", "from": "_sum", "to": "_consoleSum"}, {"arrows": "to", "from": "_sum", "to": "_consoleSum"}, {"arrows": "to", "from": "_consoleSum", "to": "_printf"}, {"arrows": "to", "from": "_consoleSum", "to": "_printf"}, {"arrows": "to", "from": "_consoleSum", "to": "_printf"}, {"arrows": "to", "from": "_consoleSum", "to": "_printf"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
